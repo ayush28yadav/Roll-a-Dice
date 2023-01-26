@@ -87,8 +87,8 @@ contract RollaDice is VRFConsumerBaseV2, AutomationCompatibleInterface {
     uint256 /* requestId */,
     uint256[] memory randomWords
   ) internal override {
-    player1score = randomWords[0] % 6;
-    computerscore = randomWords[1] % 6;
+    player1score = randomWords[0] % 6+1;
+    computerscore = randomWords[1] % 6+1;
 
     clicked = false;
     if (player1score >= i_targetscore) {
